@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="UniTrack - Your personal academic productivity system. Plan, track and achieve your academic goals.">
+    <title>UniTrack | Plan. Track. Achieve.</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="loading-screen">
+    <div class="loading-content">
+        <div class="loading-circle"></div>
+        <h2>UniTrack</h2>
+        <p>Plan. Track. Achieve.</p>
+    </div>
+</div>
+    <!-- =========================
+         NAVBAR
+         ========================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="ASSETS/logo/UniTrack logo.png"
+                    alt="UniTrack logo">
+            </a>
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="navLinks">
+                <a href="#" class="active">Home</a>
+                <a href="pages/features.html">Features</a>
+                <a href="pages/task.html">Tasks</a>
+                <a href="pages/about.html">About</a>
+
+                <a href="pages/login.html" class="mobile-login">Login</a>
+                <a href="pages/register.html" class="btn btn-primary mobile-get-started">Get Started</a>
+                <button class="theme-toggle mobile-theme-toggle" aria-label="Toggle theme">☼</button>
+            </nav>
+            <!-- Navigation Buttons -->
+            <div class="nav-actions">
+                <a href="pages/login.html" class="login-link">
+                    Login
+                </a>
+                <button
+                    class="theme-toggle"
+                    aria-label="Toggle theme">
+                    ☼
+                </button>
+                <a href="pages/register.html" class="btn btn-primary">
+                Get Started
+            </a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </header>
+    <main>
+        <!-- =========================
+             HERO SECTION
+             ========================= -->
+        <section class="hero">
+            <div class="container hero-container">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        ✦ Your academic productivity system
+                    </span>
+                    <h1>
+                        Plan.
+                        <span>Track.</span>
+                        Achieve.
+                    </h1>
+                    <p>
+                        Organize your assignments, exams, deadlines and
+                        study sessions — all in one place.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="pages/register.html"
+                            class="btn btn-primary">
+                            Get Started
+                        </a>
+                        <a href="#features"
+                            class="btn btn-secondary">
+                            Explore UniTrack →
+                        </a>
+                    </div>
+                    <div class="hero-note">
+                        ✦ Built for university students
+                    </div>
+                </div>
+                <!-- =========================
+                     DASHBOARD MOCKUP
+                     ========================= -->
+                <div class="hero-dashboard">
+                    <div class="dashboard-window">
+                        <!-- Dashboard Header -->
+                        <div class="dashboard-header">
+                            <div>
+                                <p class="dashboard-small">
+                                    Good morning
+                                </p>
+                                <h3>
+                                    Welcome back, Reverie
+                                </h3>
+                            </div>
+                            <div class="dashboard-avatar">
+                                R
+                            </div>
+                        </div>
+                        <!-- Statistics -->
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <span>
+                                    Tasks
+                                </span>
+                                <strong>
+                                    24
+                                </strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>
+                                    Completed
+                                </span>
+                                <strong>
+                                    15
+                                </strong>
+                            </div>
+                            <div class="stat-card">
+                                <span>
+                                    Pending
+                                </span>
+                                <strong>
+                                    9
+                                </strong>
+                            </div>
+                        </div>
+                        <!-- Today's Tasks -->
+                        <div class="mockup-section">
+                            <div class="section-heading">
+                                <h4>
+                                    Today's Tasks
+                                </h4>
+                                <span>
+                                    View all →
+                                </span>
+                            </div>
+                            <!-- Task 1 -->
+                            <div class="mock-task completed-task">
+                                <div class="task-check">
+                                    ✓
+                                </div>
+                                <div class="task-info">
+                                    <strong>
+                                        OOPS Assignment
+                                    </strong>
+                                    <small>
+                                        OOPS · Assignment
+                                    </small>
+                                </div>
+                                <span class="priority medium">
+                                    Medium
+                                </span>
+                            </div>
+                            <!-- Task 2 -->
+                            <div class="mock-task">
+                                <div class="task-check"></div>
+                                <div class="task-info">
+                                    <strong>
+                                        DBMS Project
+                                    </strong>
+                                    <small>
+                                        DBMS · Project
+                                    </small>
+                                </div>
+                                <span class="priority high">
+                                    High
+                                </span>
+                            </div>
+                            <!-- Task 3 -->
+                            <div class="mock-task">
+                                <div class="task-check"></div>
+                                <div class="task-info">
+                                    <strong>
+                                        DS Study Session
+                                    </strong>
+                                    <small>
+                                        Discrete Structures
+                                    </small>
+                                </div>
+                                <span class="priority low">
+                                    Low
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Semester Progress -->
+                        <div class="mockup-section">
+                            <div class="section-heading">
+                                <h4>
+                                    Semester Progress
+                                </h4>
+                                <strong>
+                                    72%
+                                </strong>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill"></div>
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             FEATURES SECTION
+             ========================= -->
+        <section class="features section" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-label">
+                        FEATURES
+                    </span>
+                    <h2>
+                        Everything you need to stay on track
+                    </h2>
+                    <p>
+                        UniTrack brings your tasks, deadlines, study plans,
+                        and academic progress together in one simple workspace.
+                    </p>
+                </div>
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            📋
+                        </div>
+                        <h3>
+                            Task Management
+                        </h3>
+                        <p>
+                            Create, organize, edit, and manage assignments,
+                            exams, personal tasks, and study sessions in one place.
+                        </p>
+                    </article>
+                    
+                    <!-- Feature 2 -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            📚
+                        </div>
+                        <h3>
+                            Subject Organization
+                        </h3>
+                        <p>
+                            Organize your academic work by subjects such as
+                            OOPS, DBMS, Discrete Structures, and FEE.
+                        </p>
+                    </article>
+
+                    <!-- Feature 3 -->
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+                        <h3>
+                            Focus Sessions
+                        </h3>
+                        <p>
+                            Use focused study sessions to stay productive
+                            and make dedicated time for your academic work.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- =========================
+             HOW IT WORKS
+             ========================= -->
+        <section class="steps section">
+            <div class="container">
+                <div class="section-title">
+                    <span class="section-label">
+                        SIMPLE WORKFLOW
+                    </span>
+                    <h2>
+                        Stay organized without the stress.
+                    </h2>
+                    <p>
+                        UniTrack keeps your academic life simple,
+                        focused and easy to manage.
+                    </p>
+                </div>
+                <div class="steps-grid">
+                    <article class="step">
+                        <div class="step-number">
+                            01
+                        </div>
+                        <h3>
+                            Add your tasks
+                        </h3>
+                        <p>
+                            Add assignments, exams, projects and
+                            study sessions in one place.
+                        </p>
+                    </article>
+                    <article class="step">
+                        <div class="step-number">
+                            02
+                        </div>
+                        <h3>
+                            Plan your week
+                        </h3>
+                        <p>
+                            Organize deadlines and study sessions
+                            using your academic calendar.
+                        </p>
+                    </article>
+                    <article class="step">
+                        <div class="step-number">
+                            03
+                        </div>
+                        <h3>
+                            Track your subjects
+                        </h3>
+                        <p>
+                            See what you've completed and stay
+                            on top of your semester goals.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- =========================
+         FOOTER
+         ========================= -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <img src="ASSETS/logo/UniTrack logo.png"
+                        alt="UniTrack logo">
+                </a>
+                <p>
+                    Your personal academic productivity system.
+                </p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>
+                        Product
+                    </h4>
+                    <a href="#features">
+                        Features
+                    </a>
+                    <a href="#">
+                        Dashboard
+                    </a>
+                    <a href="#">
+                        Tasks
+                    </a>
+                    <a href="#">
+                        Calendar
+                    </a>
+                    <a href="#">
+                        Progress
+                    </a>
+                </div>
+                <div>
+                    <h4>
+                        Company
+                    </h4>
+                    <a href="#">
+                        About
+                    </a>
+                    <a href="#">
+                        Contact
+                    </a>
+                </div>
+                <div>
+                    <h4>
+                        Account
+                    </h4>
+                    <a href="#">
+                        Login
+                    </a>
+                    <a href="#">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>
+                ©️ 2026 UniTrack. All rights reserved.
+            </p>
+            <p>
+                Plan. Track. Achieve.
+            </p>
+        </div>
+    </footer>
+    <!-- =========================
+         THEME TOGGLE JAVASCRIPT
+         ========================= -->
+    <script>
+        const themeToggles = document.querySelectorAll(".theme-toggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggles.forEach(button => {
+        button.textContent = "🌙";
+    });
+}
+
+themeToggles.forEach(button => {
+    button.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+
+        const darkMode = document.body.classList.contains("dark-mode");
+
+        themeToggles.forEach(toggle => {
+            toggle.textContent = darkMode ? "🌙" : "☼";
+        });
+
+        localStorage.setItem("theme", darkMode ? "dark" : "light");
+    });
+});
+        const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const isOpen = navLinks.classList.contains("active");
+
+    hamburger.textContent = isOpen ? "✕" : "☰";
+    hamburger.setAttribute("aria-expanded", isOpen);
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.textContent = "☰";
+        hamburger.setAttribute("aria-expanded", "false");
+    });
+});
+    </script>
+</body>
+</html>

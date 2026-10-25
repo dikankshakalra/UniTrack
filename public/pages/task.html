@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="UniTrack - Your personal academic productivity system. Plan, track and achieve your academic goals.">
+
+    <title>UniTrack | Tasks</title>
+
+    <link rel="stylesheet" href="../CSS/task.css">
+
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+
+            <!-- LOGO -->
+            <a href="../index.html" class="logo">
+
+                <img
+                    src="../ASSETS/logo/UniTrack logo.png"
+                    alt="UniTrack logo">
+
+            </a>
+
+
+            <!-- DESKTOP / MOBILE NAVIGATION -->
+            <nav class="nav-links" id="navLinks">
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="../index.html#features">
+                    Features
+                </a>
+
+                <a href="task.html" class="active">
+                    Tasks
+                </a>
+
+                <a href="../index.html#about">
+                    About
+                </a>
+
+
+                <!-- Mobile Login -->
+                <a href="login.html"
+                    class="mobile-login">
+                    Login
+                </a>
+
+
+                <!-- Mobile Get Started -->
+                <a href="register.html"
+                    class="btn btn-primary mobile-get-started">
+                    Get Started
+                </a>
+
+
+                <!-- Mobile Theme Toggle -->
+                <button
+                    class="theme-toggle mobile-theme-toggle"
+                    id="mobileThemeToggle"
+                    type="button"
+                    aria-label="Toggle Theme">
+
+                    ☼
+
+                </button>
+
+            </nav>
+
+
+            <!-- DESKTOP ACTIONS -->
+            <div class="nav-actions">
+
+                <a href="login.html"
+                    class="login-link">
+                    Login
+                </a>
+
+
+                <button
+                    class="theme-toggle"
+                    id="themeToggleBtn"
+                    type="button"
+                    aria-label="Toggle Theme">
+
+                    ☼
+
+                </button>
+
+
+                <a href="register.html"
+                    class="btn btn-primary">
+
+                    Get Started
+
+                </a>
+
+            </div>
+
+
+            <!-- MOBILE HAMBURGER -->
+            <button
+                class="hamburger"
+                id="hamburger"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false">
+
+                ☰
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             WORKSPACE / TASK MANAGEMENT
+             ================================================= -->
+
+        <section
+            class="workspace-section"
+            id="workspace">
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        Academic Command Center
+                    </span>
+
+                    <h2>
+                        Manage Tasks & Progress
+                    </h2>
+
+                    <p>
+                        Add assignments, track upcoming deadlines,
+                        filter by subjects, and track your progress.
+                    </p>
+
+                </div>
+
+
+                <div class="workspace-grid">
+
+
+                    <!-- =============================
+                         FORM SIDE
+                         ============================= -->
+
+                    <div>
+
+
+                        <!-- ADD TASK -->
+                        <div class="card-box">
+
+                            <h3 class="card-title">
+                                ✦ Add New Task
+                            </h3>
+
+
+                            <form id="taskForm">
+
+
+                                <div class="form-group">
+
+                                    <label for="taskTitle">
+                                        Task Title
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="taskTitle"
+                                        placeholder="e.g. OOPS Lab Assignment"
+                                        required>
+
+                                </div>
+
+
+                                <div class="form-row">
+
+
+                                    <div class="form-group">
+
+                                        <label for="taskSubject">
+                                            Subject
+                                        </label>
+
+                                        <select
+                                            id="taskSubject">
+                                        </select>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label for="taskPriority">
+                                            Priority
+                                        </label>
+
+                                        <select id="taskPriority">
+
+                                            <option value="low">
+                                                Low
+                                            </option>
+
+                                            <option
+                                                value="medium"
+                                                selected>
+                                                Medium
+                                            </option>
+
+                                            <option value="high">
+                                                High
+                                            </option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="taskDueDate">
+                                        Deadline Date
+                                    </label>
+
+                                    <input
+                                        type="date"
+                                        id="taskDueDate"
+                                        required>
+
+                                </div>
+
+
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary btn-block">
+
+                                    + Add Task
+
+                                </button>
+
+                            </form>
+
+                        </div>
+
+
+
+                        <!-- =============================
+                             SUBJECTS
+                             ============================= -->
+
+                        <div
+                            class="card-box subjects-card">
+
+                            <h3 class="card-title">
+                                📚 Subjects
+                            </h3>
+
+
+                            <div class="subject-add-group">
+
+                                <input
+                                    type="text"
+                                    id="newSubInput"
+                                    placeholder="New subject (e.g. AI)">
+
+                                <button
+                                    id="addSubBtn"
+                                    class="btn btn-secondary">
+
+                                    + Add
+
+                                </button>
+
+                            </div>
+
+
+                            <ul
+                                class="subject-tag-list"
+                                id="subjList">
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =============================
+                         TASK LIST
+                         ============================= -->
+
+                    <div class="card-box">
+
+
+                        <div class="task-header-row">
+
+                            <h3 class="card-title">
+                                Tasks
+                            </h3>
+
+
+                            <div class="filter-group">
+
+                                <select id="filterStatus">
+
+                                    <option value="ALL">
+                                        All Status
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="completed">
+                                        Completed
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="taskList"
+                            class="task-list-container">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             POMODORO TIMER
+             ================================================= -->
+
+        <section
+            class="focus-section"
+            id="timer">
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        Deep Work
+                    </span>
+
+                    <h2>
+                        Focus Sessions (Pomodoro)
+                    </h2>
+
+                </div>
+
+
+                <div class="timer-box card-box">
+
+
+                    <div class="mode-selector">
+
+                        <button
+                            class="mode-btn active"
+                            id="workModeBtn">
+
+                            Focus (25m)
+
+                        </button>
+
+
+                        <button
+                            class="mode-btn"
+                            id="breakModeBtn">
+
+                            Short Break (5m)
+
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="timer-display"
+                        id="timerDisplay">
+
+                        25:00
+
+                    </div>
+
+
+                    <div class="timer-controls">
+
+                        <button
+                            id="startTimerBtn"
+                            class="btn btn-primary btn-large">
+
+                            Start Session
+
+                        </button>
+
+
+                        <button
+                            id="resetTimerBtn"
+                            class="btn btn-secondary btn-large">
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEATURES
+             ================================================= -->
+
+        <section
+            class="features section"
+            id="features">
+
+            <div class="container">
+
+
+                <div class="section-title">
+
+                    <span class="section-label">
+                        FEATURES
+                    </span>
+
+                    <h2>
+                        Everything you need to stay on track
+                    </h2>
+
+                    <p>
+                        UniTrack brings your tasks, deadlines,
+                        study plans, and academic progress together
+                        in one simple workspace.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+
+                    <!-- FEATURE 1 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            📋
+                        </div>
+
+                        <h3>
+                            Task Management
+                        </h3>
+
+                        <p>
+                            Create, organize, edit, and manage
+                            assignments, exams, personal tasks,
+                            and study sessions in one place.
+                        </p>
+
+                    </article>
+
+
+                    <!-- FEATURE 2 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            📚
+                        </div>
+
+                        <h3>
+                            Subject Organization
+                        </h3>
+
+                        <p>
+                            Organize your academic work by subjects
+                            such as OOPS, DBMS, Discrete Structures,
+                            and FEE.
+                        </p>
+
+                    </article>
+
+
+                    <!-- FEATURE 3 -->
+                    <article class="feature-card">
+
+                        <div class="feature-icon">
+                            🎯
+                        </div>
+
+                        <h3>
+                            Focus Sessions
+                        </h3>
+
+                        <p>
+                            Use focused study sessions to stay
+                            productive and make dedicated time
+                            for your academic work.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-container">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo">
+
+                    <img
+                        src="../ASSETS/logo/UniTrack logo.png"
+                        alt="UniTrack logo">
+
+                </a>
+
+                <p>
+                    Your personal academic productivity system.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+
+                <div>
+
+                    <h4>
+                        Product
+                    </h4>
+
+                    <a href="#workspace">
+                        Dashboard
+                    </a>
+
+                    <a href="#workspace">
+                        Tasks
+                    </a>
+
+                    <a href="#timer">
+                        Progress
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Company
+                    </h4>
+
+                    <a href="../index.html#about">
+                        About
+                    </a>
+
+                    <a href="#">
+                        Contact
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Account
+                    </h4>
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a href="register.html">
+                        Get Started
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                ©️ 2026 UniTrack. All rights reserved.
+            </p>
+
+            <p>
+                Plan. Track. Achieve.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         EXISTING TASK JAVASCRIPT
+         ===================================================== -->
+
+    <script src="../JS/script.js"></script>
+
+
+
+    <!-- =====================================================
+         MOBILE NAVBAR
+         ===================================================== -->
+
+    <script>
+
+        const hamburger =
+            document.getElementById("hamburger");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        hamburger.addEventListener("click", () => {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen =
+                navLinks.classList.contains("active");
+
+            hamburger.textContent =
+                isOpen ? "✕" : "☰";
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* Close mobile menu after clicking a link */
+
+        navLinks
+            .querySelectorAll("a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    navLinks.classList.remove("active");
+
+                    hamburger.textContent = "☰";
+
+                    hamburger.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                });
+
+            });
+
+
+        /* Mobile theme toggle */
+
+        const mobileThemeToggle =
+            document.getElementById(
+                "mobileThemeToggle"
+            );
+
+        const desktopThemeToggle =
+            document.getElementById(
+                "themeToggleBtn"
+            );
+
+
+        mobileThemeToggle.addEventListener(
+            "click",
+            () => {
+
+                desktopThemeToggle.click();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

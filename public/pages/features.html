@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore UniTrack features - Task management, subjects, and focus sessions.">
+    <title>UniTrack | Features</title>
+    <link rel="stylesheet" href="../CSS/task.css">
+    <style>
+        /* Feature Cards Clickable */
+        .feature-card {
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* Modal Overlay */
+        .feature-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(11, 17, 32, 0.6);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .feature-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Modal Box */
+        .modal-content {
+            background: var(--surface);
+            color: var(--text);
+            width: min(90%, 550px);
+            padding: 35px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-lg);
+            transform: scale(0.8);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .feature-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--surface-secondary);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .modal-icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .modal-content p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .modal-content ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="../ASSETS/logo/UniTrack logo.png" alt="UniTrack logo">
+            </a>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="features.html" class="active">Features</a>
+                <a href="task.html">Tasks</a>
+                <a href="index.html#about">About</a>
+
+                <a href="login.html" class="mobile-login">Login</a>
+                <a href="register.html" class="btn btn-primary mobile-get-started">Get Started</a>
+                <button class="theme-toggle mobile-theme-toggle" id="mobileThemeToggle" type="button" aria-label="Toggle Theme">☼</button>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="login-link">Login</a>
+                <button class="theme-toggle" id="themeToggleBtn" type="button" aria-label="Toggle Theme">☼</button>
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <!-- =====================================================
+         MAIN CONTENT - FEATURES SECTION
+         ===================================================== -->
+    <main>
+        <section class="features section" style="background: var(--background);">
+            <div class="container">
+
+                <div class="section-title">
+                    <span class="section-label">FEATURES</span>
+                    <h2>Everything you need to stay on track</h2>
+                    <p>Click on any card below to explore detailed insights and workflow theory[cite: 7].</p>
+                </div>
+
+                <div class="features-grid">
+
+                    <!-- FEATURE 1 -->
+                    <article class="feature-card" data-feature="task">
+                        <div class="feature-icon">📋</div>
+                        <h3>Task Management</h3>
+                        <p>Create, organize, edit, and manage assignments, exams, personal tasks, and study sessions in one place[cite: 7].</p>
+                    </article>
+
+                    <!-- FEATURE 2 -->
+                    <article class="feature-card" data-feature="subject">
+                        <div class="feature-icon">📚</div>
+                        <h3>Subject Organization</h3>
+                        <p>Organize your academic work by subjects such as OOPS, DBMS, Discrete Structures, and FEE[cite: 7].</p>
+                    </article>
+
+                    <!-- FEATURE 3 -->
+                    <article class="feature-card" data-feature="focus">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Focus Sessions</h3>
+                        <p>Use focused study sessions to stay productive and make dedicated time for your academic work[cite: 7].</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================
+         MODAL POPUP CONTAINER
+         ===================================================== -->
+    <div class="feature-modal" id="featureModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-icon" id="modalIcon">📋</div>
+            <h3 id="modalTitle">Feature Title</h3>
+            <p id="modalDesc">Detailed description goes here...</p>
+            <ul id="modalList">
+                <!-- Dynamic Theory Bullet Points -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="../ASSETS/logo/UniTrack logo.png" alt="UniTrack logo">
+                </a>
+                <p>Your personal academic productivity system[cite: 7].</p>
+            </div>
+
+            <div class="footer-links">
+                <div>
+                    <h4>Product</h4>
+                    <a href="task.html">Dashboard</a>
+                    <a href="task.html">Tasks</a>
+                    <a href="features.html">Features</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="index.html#about">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div>
+                    <h4>Account</h4>
+                    <a href="login.html">Login</a>
+                    <a href="register.html">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>©️ 2026 UniTrack. All rights reserved[cite: 7].</p>
+            <p>Plan. Track. Achieve[cite: 7].</p>
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT FOR MODAL & POPUP LOGIC
+         ===================================================== -->
+    <script>
+        // Detailed Theory Data for Modals
+        const featureDetails = {
+            task: {
+                icon: "📋",
+                title: "Advanced Task Management System",
+                desc: "UniTrack's Task Management module is designed to help university students eliminate academic friction. By centralizing assignments, project deadlines, and lab submissions, it ensures high visibility over daily workloads.",
+                points: [
+                    "Dynamic priority tagging (High, Medium, Low) for urgent deliverables.",
+                    "Real-time completion percentage tracking to monitor semester progression.",
+                    "Persistent browser storage (LocalStorage) so your data never gets lost.",
+                    "Filter tasks instantly between pending and completed statuses."
+                ]
+            },
+            subject: {
+                icon: "📚",
+                title: "Structured Subject Organization",
+                desc: "Managing multiple engineering courses can be chaotic. Our subject categorization module allows you to cleanly isolate coursework, lab reports, and lecture notes per subject code.",
+                points: [
+                    "Custom subject tagging for core courses like OOPS, DBMS, and Discrete Structures.",
+                    "Instant addition and deletion of university subjects on the fly.",
+                    "Associated task grouping to filter deliverables by specific module requirements.",
+                    "Reduces cognitive overload by maintaining clean categorical separation."
+                ]
+            },
+            focus: {
+                icon: "🎯",
+                title: "Pomodoro Focus Sessions & Deep Work",
+                desc: "Deep work requires uninterrupted concentration blocks. UniTrack integrates the scientifically-backed Pomodoro technique to train your brain for sustained focus and higher retention rates.",
+                points: [
+                    "Standard 25-minute high-intensity focus blocks to drive productivity.",
+                    "5-minute short recovery breaks to prevent mental burnout.",
+                    "Interactive countdown timer with seamless start, pause, and reset controls.",
+                    "Audio/Visual alerts upon session completion to structure your study routines."
+                ]
+            }
+        };
+
+        const modal = document.getElementById("featureModal");
+        const modalClose = document.getElementById("modalClose");
+        const modalIcon = document.getElementById("modalIcon");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDesc = document.getElementById("modalDesc");
+        const modalList = document.getElementById("modalList");
+
+        // Open Modal on Card Click
+        document.querySelectorAll(".feature-card").forEach(card => {
+            card.addEventListener("click", () => {
+                const featureKey = card.getAttribute("data-feature");
+                const data = featureDetails[featureKey];
+
+                if (data) {
+                    modalIcon.textContent = data.icon;
+                    modalTitle.textContent = data.title;
+                    modalDesc.textContent = data.desc;
+                    
+                    modalList.innerHTML = "";
+                    data.points.forEach(pt => {
+                        modalList.innerHTML += `<li>${pt}</li>`;
+                    });
+
+                    modal.classList.add("active");
+                }
+            });
+        });
+
+        // Close Modal via Close Button
+        modalClose.addEventListener("click", () => {
+            modal.classList.remove("active");
+        });
+
+        // Close Modal when clicking outside the box
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("active");
+            }
+        });
+
+        // Navbar Hamburger Script
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("navLinks");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            const isOpen = navLinks.classList.contains("active");
+            hamburger.textContent = isOpen ? "✕" : "☰";
+            hamburger.setAttribute("aria-expanded", isOpen);
+        });
+
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                hamburger.textContent = "☰";
+                hamburger.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        const mobileThemeToggle = document.getElementById("mobileThemeToggle");
+        const desktopThemeToggle = document.getElementById("themeToggleBtn");
+
+        if(mobileThemeToggle && desktopThemeToggle) {
+            mobileThemeToggle.addEventListener("click", () => {
+                desktopThemeToggle.click();
+            });
+        }
+    </script>
+</body>
+
+</html>
